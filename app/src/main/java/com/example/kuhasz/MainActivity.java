@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Kliknieto element +1", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, ListaPrzepisowActivity.class);
                 startActivity(intent);
+
             }
         });
     }
