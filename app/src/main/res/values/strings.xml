@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Kuhasz</string>
+    <string-array name ="kategorie_string">
+        <item>ciasta</item>
+        <item>ciasteczka</item>
+        <item>desery</item>
+        <item>napoje</item>
+    </string-array>
 </resources>
