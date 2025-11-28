@@ -12,6 +12,11 @@ public class Przepis {
         idObrazka = R.drawable.wuzetka;
     }
 
+    @Override
+    public String toString() {
+        return nazwyPrzepisu;
+    }
+
     public Przepis(String nazwyPrzepisu, String kategoria, String skladniki, String opis, int idObrazka) {
         this.nazwyPrzepisu = nazwyPrzepisu;
         this.kategoria = kategoria;
