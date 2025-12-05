@@ -1,6 +1,9 @@
 package com.example.kuhasz;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -36,5 +39,16 @@ public class ListaPrzepisowActivity extends AppCompatActivity {
                 przepisArrayList
         );
         listViewPrzepisy.setAdapter(arrayAdapter);
+        listViewPrzepisy.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                int indeksKliknietegoElementu = i;
+                String kategoria = wybranaKategoria;
+                Intent intent = new Intent(ListaPrzepisowActivity.this, PrzepisActivity.class);
+                intent.putExtra("INDEKS", indeksKliknietegoElementu);
+                intent.putExtra("KATEGORIA", kategoria);
+                startActivity(intent);
+            }
+        });
     }
 }
