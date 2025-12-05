@@ -2,11 +2,13 @@ package com.example.kuhasz;
 
 import java.util.ArrayList;
 
+
 public class RepozytoriumPrzepisow {
     private static ArrayList<Przepis> przepisy;
     private static void wygenerujPrzepisy(){
         przepisy = new ArrayList<>();
         przepisy.add(new Przepis("tiramisu", "ciasta","Jajecka, kakałko, ekspresso, mascarpone" , "pyszne", R.drawable.tiramisu));
+        przepisy.add(new Przepis("Popek", "ciasteczka","Jajecka, kakałko, ekspresso, czopizm" , "lecker", R.drawable.tiramisu));
         przepisy.add(new Przepis("wuzetka", "ciasta","kakałko, jajecka, krym pyszny, chęci" , "wow, das schmeckt gut", R.drawable.wuzetka));
         przepisy.add(new Przepis("pomidorowy soczek", "napoje","Pomidorki, słoik" , "Ich finde der Saft lecker", R.drawable.pomidorowysok));
         przepisy.add(new Przepis("Burgjer", "desery","😍👍😘💕❤️" , "das ist so gut", R.drawable.burger));
@@ -15,5 +17,14 @@ public class RepozytoriumPrzepisow {
         wygenerujPrzepisy();
         return przepisy;
     }
-    //public static ArrayList<Przepis(String>
+    public static ArrayList<Przepis> zwrocPrzepisZDanejKategorii(String kategoria){
+        wygenerujPrzepisy();
+        ArrayList<Przepis> wybranePrzepisy = new ArrayList<>();
+        for (Przepis przepis:przepisy){
+            if(przepis.getKategoria().equals(kategoria)){
+                wybranePrzepisy.add(przepis);
+            }
+        }
+        return wybranePrzepisy;
+    }
 }

@@ -31,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 view.setBackgroundColor(Color.GRAY);
-                Toast.makeText(MainActivity.this, "Kliknieto element +1", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "Kliknieto element", Toast.LENGTH_SHORT).show();
+                //Klikniecie kategorii
+                String wybranaKategoria = adapterView.getItemAtPosition(i).toString();
                 Intent intent = new Intent(MainActivity.this, ListaPrzepisowActivity.class);
+                intent.putExtra("KATEGORIA", wybranaKategoria);
                 startActivity(intent);
-
             }
         });
     }
